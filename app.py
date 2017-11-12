@@ -1,10 +1,20 @@
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, send_from_directory, render_template
 import requests
 requests.packages.urllib3.disable_warnings()
 from pytrends.request import TrendReq
 pytrends = TrendReq(hl='en-US', tz=360)
 
-app = Flask(__name__)
+app = Flask(__name__, static_url_path='')
+
+@app.route('/')
+def root():
+  return render_template('index.html')
+
+@app.route('/<path:path>')
+def static_proxy(path):
+  # send_static_file will guess the correct MIME type
+  return app.send_static_file(path)
+
 
 @app.route('/get_trends', methods=['GET'])
 def get_trends():

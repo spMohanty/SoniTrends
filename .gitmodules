@@ -1,3 +1,6 @@
 [submodule "pytrends"]
 	path = pytrends
 	url = https://github.com/spMohanty/pytrends
+[submodule "searchkit-starter-app"]
+	path = searchkit-starter-app
+	url = git@github.com:searchkit/searchkit-starter-app.git
