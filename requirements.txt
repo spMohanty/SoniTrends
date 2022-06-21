@@ -10,7 +10,7 @@ itsdangerous==0.24
 Jinja2==2.9.6
 lxml==4.1.1
 MarkupSafe==1.0
-numpy==1.13.3
+numpy==1.22.0
 packaging==16.8
 pandas==0.21.0
 pyparsing==2.2.0
